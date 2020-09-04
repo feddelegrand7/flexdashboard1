@@ -1,0 +1,49 @@
+---
+title: "mpg data frame"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### hwy histogram
+
+```{r,message=FALSE, warning=FALSE}
+
+ggplot(mpg, aes(hwy)) + 
+  geom_histogram(fill = "darkred")
+
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### cty histogram
+
+```{r, message=FALSE, warning=FALSE}
+
+ggplot(mpg, aes(cty)) +
+  geom_histogram(fill = "lightblue")
+
+
+```
+
+### displ histogram
+
+```{r, message=FALSE, warning=FALSE}
+
+ggplot(mpg, aes(displ)) +
+  geom_histogram(fill = "pink")
+
+
+```
+
